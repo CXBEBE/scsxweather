@@ -53,7 +53,7 @@ public class LBSActivity extends AppCompatActivity {
 
         baiduMap.setBaiduHeatMapEnabled(true);
 
-        positionText=(TextView)findViewById(R.id.position_text_view);
+        positionText =(TextView)findViewById(R.id.position_text_view);
         List<String> permissionList=new ArrayList<>();
         if(ContextCompat.checkSelfPermission(LBSActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
             permissionList.add(android.Manifest.permission.ACCESS_FINE_LOCATION);
@@ -172,10 +172,10 @@ public class LBSActivity extends AppCompatActivity {
         }
 
 
-       // @Override
+       //@Override
         //public void onConnectHotSpotMessage(String s,int i){
 
-       // }
+      // }
     }
 
 }

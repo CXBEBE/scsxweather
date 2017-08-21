@@ -54,8 +54,10 @@ public class Weather2Activity extends AppCompatActivity {
     public SwipeRefreshLayout swipeRefresh;
     private String mWeatherId;
 
+
     public DrawerLayout drawerLayout;
     private Button navButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,11 +84,12 @@ public class Weather2Activity extends AppCompatActivity {
         carWashText=(TextView)findViewById(R.id.car_wash_text);
         sportText=(TextView)findViewById(R.id.sport_text);
 
-        swipeRefresh=(SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
-        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
-
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer_layout);
         navButton=(Button)findViewById(R.id.nav_button);
+
+
+        swipeRefresh=(SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
+        swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
 
         SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString=prefs.getString("weather",null);
@@ -115,6 +118,9 @@ public class Weather2Activity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+
+
+
 
         //添加必应图片作为天气背景
         String bingPic=prefs.getString("bing_pic",null);
@@ -199,6 +205,7 @@ public class Weather2Activity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+
         //后台自动更新数据
         Intent intent =new Intent(this, AutoUpdateService.class);
         startService(intent);

@@ -19,7 +19,5 @@ public class WeatherActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
-
     }
 }
